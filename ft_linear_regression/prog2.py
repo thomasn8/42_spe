@@ -178,3 +178,18 @@ class LinearRegression:
 		self.gradientDescent(X, y, divider)
 		self.meanSquaredError()
 		self.visualization()
+
+
+## visualizations can be set in the fit method and by using the estimatePriceVisualize method
+def main():
+	csvFile = input("Path to the csv file containing the training set: ")
+	reg = LinearRegression()
+	reg.fit(csvFile, learningRate=0.01, iter=10000, visualize=True)
+	with open("thetas.txt", "w") as file:
+		file.write(f"theta0 {reg.theta0}\n")
+		file.write(f"theta1 {reg.theta1}\n")
+	print("Theta values saved to thetas.txt")
+
+
+if __name__ == "__main__":
+	main()

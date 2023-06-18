@@ -1,3 +1,2 @@
-*/__pycache__/*
-*.pdf
-*/*.pdf
+.DS_Store
+.env
